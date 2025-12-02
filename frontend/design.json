@@ -1,0 +1,613 @@
+{
+    "appName": "Authentication App",
+    "designSystem": {
+        "colors": {
+            "primary": "#0066FF",
+            "primaryDark": "#0052CC",
+            "secondary": "#FF6B35",
+            "background": "#F8F9FA",
+            "cardBackground": "#FFFFFF",
+            "textPrimary": "#1A1A1A",
+            "textSecondary": "#6B7280",
+            "textPlaceholder": "#9CA3AF",
+            "error": "#EF4444",
+            "success": "#10B981",
+            "border": "#E5E7EB",
+            "iconGray": "#9CA3AF",
+            "illustrationBlue": "#3B82F6",
+            "illustrationOrange": "#FF6B35",
+            "illustrationGreen": "#34D399"
+        },
+        "typography": {
+            "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+            "headingLarge": {
+                "fontSize": "32px",
+                "fontWeight": "700",
+                "lineHeight": "40px"
+            },
+            "headingMedium": {
+                "fontSize": "24px",
+                "fontWeight": "700",
+                "lineHeight": "32px"
+            },
+            "body": {
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "24px"
+            },
+            "bodySmall": {
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "20px"
+            },
+            "caption": {
+                "fontSize": "12px",
+                "fontWeight": "400",
+                "lineHeight": "16px"
+            },
+            "button": {
+                "fontSize": "16px",
+                "fontWeight": "600",
+                "lineHeight": "24px"
+            },
+            "link": {
+                "fontSize": "14px",
+                "fontWeight": "500",
+                "lineHeight": "20px"
+            }
+        },
+        "spacing": {
+            "xs": "4px",
+            "sm": "8px",
+            "md": "16px",
+            "lg": "24px",
+            "xl": "32px",
+            "xxl": "48px"
+        },
+        "borderRadius": {
+            "small": "8px",
+            "medium": "12px",
+            "large": "16px",
+            "full": "9999px"
+        },
+        "shadows": {
+            "card": "0px 4px 16px rgba(0, 0, 0, 0.08)",
+            "button": "0px 2px 8px rgba(0, 102, 255, 0.24)",
+            "input": "0px 1px 3px rgba(0, 0, 0, 0.1)"
+        }
+    },
+    "components": {
+        "illustration": {
+            "type": "custom-svg",
+            "style": "flat-design",
+            "colorPalette": [
+                "#3B82F6",
+                "#FF6B35",
+                "#34D399",
+                "#FBBF24"
+            ],
+            "characteristics": "Minimalist, friendly, modern illustrations with geometric shapes"
+        },
+        "inputField": {
+            "height": "56px",
+            "borderRadius": "12px",
+            "border": "1px solid #E5E7EB",
+            "backgroundColor": "#FFFFFF",
+            "padding": "16px",
+            "iconSize": "20px",
+            "iconColor": "#9CA3AF",
+            "focusBorderColor": "#0066FF",
+            "errorBorderColor": "#EF4444",
+            "states": {
+                "default": {
+                    "border": "1px solid #E5E7EB",
+                    "backgroundColor": "#FFFFFF"
+                },
+                "focus": {
+                    "border": "2px solid #0066FF",
+                    "boxShadow": "0px 0px 0px 4px rgba(0, 102, 255, 0.1)"
+                },
+                "error": {
+                    "border": "2px solid #EF4444",
+                    "boxShadow": "0px 0px 0px 4px rgba(239, 68, 68, 0.1)"
+                },
+                "disabled": {
+                    "backgroundColor": "#F3F4F6",
+                    "cursor": "not-allowed"
+                }
+            }
+        },
+        "button": {
+            "primary": {
+                "height": "56px",
+                "borderRadius": "12px",
+                "backgroundColor": "#0066FF",
+                "color": "#FFFFFF",
+                "padding": "16px 24px",
+                "fontWeight": "600",
+                "boxShadow": "0px 2px 8px rgba(0, 102, 255, 0.24)",
+                "states": {
+                    "hover": {
+                        "backgroundColor": "#0052CC"
+                    },
+                    "active": {
+                        "backgroundColor": "#0047B3"
+                    },
+                    "disabled": {
+                        "backgroundColor": "#93C5FD",
+                        "cursor": "not-allowed",
+                        "boxShadow": "none"
+                    }
+                }
+            },
+            "secondary": {
+                "height": "56px",
+                "borderRadius": "12px",
+                "backgroundColor": "transparent",
+                "color": "#0066FF",
+                "border": "2px solid #0066FF",
+                "padding": "16px 24px",
+                "fontWeight": "600"
+            },
+            "text": {
+                "backgroundColor": "transparent",
+                "color": "#0066FF",
+                "padding": "8px 16px",
+                "fontWeight": "500"
+            }
+        },
+        "card": {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": "24px",
+            "padding": "32px 24px",
+            "boxShadow": "0px 4px 16px rgba(0, 0, 0, 0.08)",
+            "maxWidth": "400px"
+        },
+        "backButton": {
+            "size": "40px",
+            "borderRadius": "12px",
+            "backgroundColor": "transparent",
+            "iconColor": "#1A1A1A",
+            "iconSize": "24px"
+        },
+        "divider": {
+            "text": "OR",
+            "color": "#9CA3AF",
+            "lineColor": "#E5E7EB",
+            "margin": "24px 0"
+        }
+    },
+    "screens": [
+        {
+            "id": "signup",
+            "name": "Sign Up",
+            "description": "User registration screen",
+            "layout": {
+                "backgroundColor": "#F8F9FA",
+                "padding": "24px",
+                "alignment": "center"
+            },
+            "elements": [
+                {
+                    "type": "illustration",
+                    "position": "top",
+                    "description": "Two people shaking hands with geometric shapes",
+                    "height": "200px",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "heading",
+                    "text": "Sign up",
+                    "style": "headingLarge",
+                    "color": "textPrimary",
+                    "marginBottom": "24px"
+                },
+                {
+                    "type": "input",
+                    "id": "email",
+                    "placeholder": "alex.mint@gmail.com",
+                    "icon": "@",
+                    "inputType": "email",
+                    "required": true,
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "input",
+                    "id": "fullname",
+                    "placeholder": "Full name",
+                    "icon": "user",
+                    "inputType": "text",
+                    "required": true,
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "input",
+                    "id": "mobile",
+                    "placeholder": "Mobile",
+                    "icon": "phone",
+                    "inputType": "tel",
+                    "required": true,
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "terms",
+                    "label": "By signing up, you agree to our Terms & Conditions and Privacy Policy",
+                    "required": true,
+                    "marginBottom": "24px",
+                    "links": [
+                        {
+                            "text": "Terms & Conditions",
+                            "url": "/terms"
+                        },
+                        {
+                            "text": "Privacy Policy",
+                            "url": "/privacy"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "variant": "primary",
+                    "text": "Continue",
+                    "action": "submitSignup",
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "text",
+                    "content": "Joined us before? <link>Login</link>",
+                    "alignment": "center",
+                    "links": [
+                        {
+                            "text": "Login",
+                            "action": "navigateToLogin"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "login",
+            "name": "Login",
+            "description": "User login screen",
+            "layout": {
+                "backgroundColor": "#F8F9FA",
+                "padding": "24px",
+                "alignment": "center"
+            },
+            "elements": [
+                {
+                    "type": "illustration",
+                    "position": "top",
+                    "description": "Person sitting with laptop and geometric shapes",
+                    "height": "200px",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "heading",
+                    "text": "Login",
+                    "style": "headingLarge",
+                    "color": "textPrimary",
+                    "marginBottom": "24px"
+                },
+                {
+                    "type": "input",
+                    "id": "email",
+                    "placeholder": "Email ID",
+                    "icon": "@",
+                    "inputType": "email",
+                    "required": true,
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "input",
+                    "id": "password",
+                    "placeholder": "Password",
+                    "icon": "lock",
+                    "inputType": "password",
+                    "required": true,
+                    "showPasswordToggle": true,
+                    "marginBottom": "8px"
+                },
+                {
+                    "type": "link",
+                    "text": "Forgot Password?",
+                    "action": "navigateToForgotPassword",
+                    "alignment": "right",
+                    "marginBottom": "24px"
+                },
+                {
+                    "type": "button",
+                    "variant": "primary",
+                    "text": "Login",
+                    "action": "submitLogin",
+                    "marginBottom": "24px"
+                },
+                {
+                    "type": "divider",
+                    "text": "OR",
+                    "marginBottom": "24px"
+                },
+                {
+                    "type": "button",
+                    "variant": "secondary",
+                    "text": "Login with Google",
+                    "icon": "google",
+                    "action": "loginWithGoogle",
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "text",
+                    "content": "New to Logisticx? <link>Register</link>",
+                    "alignment": "center",
+                    "links": [
+                        {
+                            "text": "Register",
+                            "action": "navigateToSignup"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "forgotPassword",
+            "name": "Forgot Password",
+            "description": "Password recovery screen",
+            "layout": {
+                "backgroundColor": "#F8F9FA",
+                "padding": "24px",
+                "alignment": "center"
+            },
+            "elements": [
+                {
+                    "type": "backButton",
+                    "action": "navigateBack",
+                    "position": "topLeft"
+                },
+                {
+                    "type": "illustration",
+                    "position": "top",
+                    "description": "Person with orange lock icon",
+                    "height": "200px",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "heading",
+                    "text": "Forgot Password?",
+                    "style": "headingLarge",
+                    "color": "textPrimary",
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "text",
+                    "content": "Don't worry! It happens. Please enter the address associated with your account.",
+                    "style": "body",
+                    "color": "textSecondary",
+                    "alignment": "center",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "input",
+                    "id": "emailOrMobile",
+                    "placeholder": "Email ID / Mobile number",
+                    "icon": "@",
+                    "inputType": "text",
+                    "required": true,
+                    "marginBottom": "24px"
+                },
+                {
+                    "type": "button",
+                    "variant": "primary",
+                    "text": "Submit",
+                    "action": "submitForgotPassword"
+                }
+            ]
+        },
+        {
+            "id": "enterOtp",
+            "name": "Enter OTP",
+            "description": "OTP verification screen",
+            "layout": {
+                "backgroundColor": "#F8F9FA",
+                "padding": "24px",
+                "alignment": "center"
+            },
+            "elements": [
+                {
+                    "type": "backButton",
+                    "action": "navigateBack",
+                    "position": "topLeft"
+                },
+                {
+                    "type": "illustration",
+                    "position": "top",
+                    "description": "Mobile phone with password/OTP display",
+                    "height": "200px",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "heading",
+                    "text": "Enter OTP",
+                    "style": "headingLarge",
+                    "color": "textPrimary",
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "text",
+                    "content": "An 4 digit code has been sent to +91 9988990020",
+                    "style": "body",
+                    "color": "textSecondary",
+                    "alignment": "center",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "otpInput",
+                    "id": "otp",
+                    "length": 4,
+                    "inputType": "number",
+                    "required": true,
+                    "marginBottom": "24px",
+                    "style": {
+                        "boxSize": "56px",
+                        "borderRadius": "12px",
+                        "fontSize": "24px",
+                        "fontWeight": "600",
+                        "gap": "12px"
+                    }
+                },
+                {
+                    "type": "text",
+                    "content": "Didn't receive code? <link>Resend</link>",
+                    "alignment": "center",
+                    "marginBottom": "24px",
+                    "links": [
+                        {
+                            "text": "Resend",
+                            "action": "resendOtp"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "variant": "primary",
+                    "text": "Verify",
+                    "action": "verifyOtp"
+                }
+            ]
+        },
+        {
+            "id": "resetPassword",
+            "name": "Reset Password",
+            "description": "Create new password screen",
+            "layout": {
+                "backgroundColor": "#F8F9FA",
+                "padding": "24px",
+                "alignment": "center"
+            },
+            "elements": [
+                {
+                    "type": "backButton",
+                    "action": "navigateBack",
+                    "position": "topLeft"
+                },
+                {
+                    "type": "illustration",
+                    "position": "top",
+                    "description": "Orange lock icon with decorative elements",
+                    "height": "200px",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "heading",
+                    "text": "Reset Password",
+                    "style": "headingLarge",
+                    "color": "textPrimary",
+                    "marginBottom": "32px"
+                },
+                {
+                    "type": "input",
+                    "id": "newPassword",
+                    "placeholder": "New password",
+                    "icon": "lock",
+                    "inputType": "password",
+                    "required": true,
+                    "showPasswordToggle": true,
+                    "marginBottom": "16px"
+                },
+                {
+                    "type": "input",
+                    "id": "confirmPassword",
+                    "placeholder": "Confirm new password",
+                    "icon": "lock",
+                    "inputType": "password",
+                    "required": true,
+                    "showPasswordToggle": true,
+                    "marginBottom": "24px"
+                },
+                {
+                    "type": "button",
+                    "variant": "primary",
+                    "text": "Submitting...",
+                    "action": "submitResetPassword",
+                    "loading": true
+                }
+            ]
+        }
+    ],
+    "navigation": {
+        "flow": [
+            {
+                "from": "signup",
+                "to": "login",
+                "trigger": "Already have account link"
+            },
+            {
+                "from": "login",
+                "to": "signup",
+                "trigger": "Register link"
+            },
+            {
+                "from": "login",
+                "to": "forgotPassword",
+                "trigger": "Forgot Password link"
+            },
+            {
+                "from": "forgotPassword",
+                "to": "enterOtp",
+                "trigger": "Submit button"
+            },
+            {
+                "from": "enterOtp",
+                "to": "resetPassword",
+                "trigger": "Verify button"
+            },
+            {
+                "from": "resetPassword",
+                "to": "login",
+                "trigger": "Submit button (success)"
+            }
+        ]
+    },
+    "animations": {
+        "pageTransition": {
+            "type": "slide",
+            "duration": "300ms",
+            "easing": "ease-in-out"
+        },
+        "buttonPress": {
+            "type": "scale",
+            "scale": "0.98",
+            "duration": "100ms"
+        },
+        "inputFocus": {
+            "type": "border-glow",
+            "duration": "200ms"
+        },
+        "illustrationEntry": {
+            "type": "fade-slide-up",
+            "duration": "500ms",
+            "delay": "100ms"
+        }
+    },
+    "responsiveness": {
+        "mobile": {
+            "maxWidth": "428px",
+            "padding": "16px"
+        },
+        "tablet": {
+            "maxWidth": "768px",
+            "padding": "24px"
+        },
+        "desktop": {
+            "maxWidth": "1200px",
+            "cardCentered": true
+        }
+    },
+    "accessibility": {
+        "minimumTouchTarget": "44px",
+        "colorContrast": "WCAG AA compliant",
+        "focusIndicators": true,
+        "screenReaderSupport": true,
+        "keyboardNavigation": true
+    }
+}

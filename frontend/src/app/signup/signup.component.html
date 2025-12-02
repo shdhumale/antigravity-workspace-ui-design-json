@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="card">
+        <div class="illustration">
+            <!-- Illustration Placeholder -->
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+        </div>
+
+        <h2 class="heading-large text-center mb-lg">Sign up</h2>
+
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="username" formControlName="username" class="input-field"
+                        placeholder="Username">
+                </div>
+                <div *ngIf="signupForm.get('username')?.invalid && (signupForm.get('username')?.dirty || signupForm.get('username')?.touched)"
+                    class="error">
+                    <div *ngIf="signupForm.get('username')?.errors?.['required']">Username is required.</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <span class="input-icon">&#64;</span>
+                    <input type="email" id="email" formControlName="email" class="input-field"
+                        placeholder="alex.mint@gmail.com">
+                </div>
+                <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)"
+                    class="error">
+                    <div *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</div>
+                    <div *ngIf="signupForm.get('email')?.errors?.['email']">Invalid email format.</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="password" formControlName="password" class="input-field"
+                        placeholder="Create a password">
+                </div>
+                <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)"
+                    class="error">
+                    <div *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</div>
+                    <div *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 6
+                        characters.</div>
+                </div>
+            </div>
+
+            <div class="form-group" style="display: flex; align-items: flex-start; gap: 8px;">
+                <input type="checkbox" id="terms" required style="margin-top: 4px;">
+                <label for="terms"
+                    style="font-size: var(--font-size-caption); color: var(--color-text-secondary); line-height: 1.4;">
+                    By signing up, you agree to our <a href="#" class="link">Terms & Conditions</a> and <a href="#"
+                        class="link">Privacy Policy</a>
+                </label>
+            </div>
+
+            <div *ngIf="errorMessage" class="error mb-md">{{ errorMessage }}</div>
+
+            <button type="submit" class="btn btn-primary mb-md" [disabled]="signupForm.invalid">Continue</button>
+        </form>
+
+        <div class="text-center body-text">
+            Joined us before? <a routerLink="/login" class="link">Login</a>
+        </div>
+    </div>
+</div>
